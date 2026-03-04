@@ -54,7 +54,7 @@ button {
 }
 
 #header {
-  position: static;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -214,6 +214,70 @@ button {
   opacity: 1;
 }
 
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 750px;
+  width: 90%;
+  position: relative;
+  text-align: center;
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-content img {
+  width: 100%;
+}
+
+.modal-content p {
+  color: #fff;
+  font-size: 15px;
+  line-height: 1.5;
+  text-align: left;
+}
+
+.modal-close {
+  position: absolute;
+  top: 0px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.modal-close:hover {
+  opacity: 0.7;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
 #about h1 {
   text-align: center;
 }
@@ -308,4 +372,77 @@ footer .container {
   justify-content: center;
   height: 50px;
   gap: 10px;
+}
+
+@media (max-width: 768px) {
+  .title {
+    font-size: 35px;
+  }
+
+  .content {
+    font-size: 15px;
+  }
+
+  header img {
+    display: none;
+  }
+
+  header {
+    text-align: center;
+    display: flex;
+  }
+
+  #home {
+    padding-top: 8rem;
+  }
+
+  #home .container {
+    grid-template-columns: 100%;
+    text-align: center;
+    gap: 3rem;
+  }
+
+  #home .container div:nth-child(2):after {
+    left: -7px;
+    top: 16px;
+  }
+
+  #home img {
+    width: 100% !important;
+    margin-left: 5px;
+  }
+
+  #projetos .container .wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  #about .wrapper {
+    grid-template-columns: 100%;
+  }
+
+  #about .wrapper div:first-child:after {
+    left: -7px;
+    top: 16px;
+  }
+
+  #about .wrapper img {
+    width: 100% !important;
+  }
+
+  #contact .wrapper {
+    grid-template-columns: repeat(1, 1fr);
+  }
+
+  #contact .logo {
+    display: none;
+  }
+
+  footer p {
+    text-align: center;
+    font-size: 12px;
+  }
+
+  footer img {
+    width: 100px;
+  }
 }
