@@ -25,6 +25,10 @@ button {
   cursor: pointer;
 }
 
+li {
+  list-style: none;
+}
+
 .container {
   max-width: 1200px;
   margin: 0 auto;
@@ -218,10 +222,10 @@ button {
   display: none;
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.97);
   justify-content: center;
   align-items: center;
-  z-index: 999;
+  z-index: 999999;
 }
 
 .modal.active {
@@ -427,6 +431,10 @@ footer .container {
 
   #about .wrapper img {
     width: 100% !important;
+  }
+
+  #contact .container {
+    margin-left: -1.4rem;
   }
 
   #contact .wrapper {
